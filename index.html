@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  padding:30px;
+    background-image: url('https://avatars2.githubusercontent.com/u/6877315');
+}
+.mylink{
+  width: 70px;
+  height: 20px;
+  position: relative;
+  background-color: white;
+  border-radius: 70%;
+  text-align: center;
+}
+
+</style>
+<body>
+
+
+<div id ="container">
+  <div onmouseover="myMove()" id ="animate1" class="mylink"> <a href="https://twitter.com/fkaraoglan_cs" target="_blank">Twitter!</a> </div>
+  <div onmouseover="myMove()" id ="animate2" class="mylink"> <a href="mailto:fatihkaraoglanoglu@gmail.com" target="_blank">Email!</a> </div>
+  <div onmouseover="myMove()" id ="animate3" class="mylink"> <a href="https://www.linkedin.com/in/fatih-karaoglanoglu/" target="_blank">Linkedin!</a> </div>
+  <div onmouseover="myMove()" id ="animate4" class="mylink"> <a href="https://www.github.com/f0t1h" target="_blank">Github!</a> </div>
+</div>
+
+<script>
+var is_on=false;
+function myMove() {
+  if( !is_on){
+  	is_on=true;
+  var elem = document.getElementById("animate1");   
+  var pos = {p:0};
+  var id = setInterval(frame, 15,elem,pos);
+  var elem2 = document.getElementById("animate2");   
+  var pos2 = {p:0};
+  var id2 = setInterval(frame, 20,elem2,pos2);
+  var elem3 = document.getElementById("animate3");   
+  var pos3 = {p:0};
+  var id3 = setInterval(frame, 32,elem3,pos3);
+  var elem4 = document.getElementById("animate4");   
+  var pos4 = {p:0};
+  var id4 = setInterval(frame, 45,elem4,pos4);
+  function frame(elem,pos) {
+ 	  var x = Math.cos(Math.PI * pos.p / 150);
+      var y = Math.sin(Math.PI * pos.p / 150);
+      pos.p++; 
+
+      elem.style.top = ( 175 + 175 * y) + "px"; 
+      elem.style.left = ( 175 - 175 * x) + "px"; 
+  }
+  }
+}
+</script>
+
+</body>
+</html>
+
