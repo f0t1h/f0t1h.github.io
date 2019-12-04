@@ -31,6 +31,9 @@
 
 <script>
 var is_on=false;
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	myMove();
+}
 function myMove() {
   if( !is_on){
   	is_on=true;
